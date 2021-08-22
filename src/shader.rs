@@ -1,4 +1,5 @@
 use shaderc::ShaderKind;
+use std::fs::write;
 
 #[allow(dead_code)]
 pub enum ShaderQuality {
@@ -205,7 +206,6 @@ impl ShaderSource {
         device.create_shader_module(&wgpu::ShaderModuleDescriptor {
             label: Some(name),
             source: wgpu::ShaderSource::SpirV(spirv.into()),
-            flags: wgpu::ShaderFlags::empty(),
         })
     }
 }
