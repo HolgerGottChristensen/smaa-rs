@@ -713,8 +713,8 @@ float2 SMAALumaEdgeDetectionPS(float2 texcoord,
     float2 edges = step(threshold, delta.xy);
 
     // Then discard if there is no edge:
-    //if (dot(edges, float2(1.0, 1.0)) == 0.0)
-        //discard;
+    if (dot(edges, float2(1.0, 1.0)) == 0.0)
+        discard;
 
     // Calculate right and bottom deltas:
     float Lright = dot(SMAASamplePoint(colorTex, offset[1].xy).rgb, weights);

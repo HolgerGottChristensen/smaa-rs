@@ -5,6 +5,7 @@ use winit::{
     event::{Event, WindowEvent},
     event_loop::ControlFlow,
 };
+use wgpu::SurfaceConfiguration;
 
 fn main() {
     env_logger::init();
